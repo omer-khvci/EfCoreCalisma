@@ -12,6 +12,8 @@ using (var _context= new AppDpContext())
     //    var state = _context.Entry(p).State;
     //    Console.WriteLine($"{p.Id}: {p.Name}- {p.Stock} state: {state}");
     //});
+    /*
+     * Stateler konusu
     var product = await _context.Products.FirstAsync();
     Console.WriteLine($"ilk state {_context.Entry(product).State}");
     _context.Remove(product);
@@ -21,4 +23,31 @@ using (var _context= new AppDpContext())
     //Console.WriteLine($"ilk state {_context.Entry(newProduct).State}");
     await _context.SaveChangesAsync();
     Console.WriteLine($"unchanced -- {_context.Entry(product).State}");
+    
+     */
+   // var products =  _context.Products.AsNoTracking().ToListAsync();
+    _context.Products.Add(new()
+    {
+        Name = "Kalem1",
+        Price = 200,
+        Stock = 100,
+        Barcode = 123
+    });
+    _context.Products.Add(new()
+    {
+        Name = "Kalem1",
+        Price = 200,
+        Stock = 100,
+        Barcode = 123
+    });
+    _context.Products.Add(new()
+    {
+        Name = "Kalem1",
+        Price = 200,
+        Stock = 100,
+        Barcode = 123
+    });
+   
+     _context.SaveChanges();
+
 }
