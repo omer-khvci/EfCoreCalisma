@@ -14,5 +14,8 @@ namespace CodeFirstYaklisimi.DAL
         public int Stock { get; set; }
         public DateTime? CreatedDate { get; set; }
         public int Barcode { get; set; }
+        public int Category_Id { get; set; }
+        //Navigation Property
+        public Category Category { get; set; }
     }
 }

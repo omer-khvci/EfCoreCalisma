@@ -24,29 +24,31 @@ using (var _context= new AppDpContext())
     await _context.SaveChangesAsync();
     Console.WriteLine($"unchanced -- {_context.Entry(product).State}");
     
+     *
+     *
      */
    // var products =  _context.Products.AsNoTracking().ToListAsync();
-    _context.Products.Add(new()
-    {
-        Name = "Kalem1",
-        Price = 200,
-        Stock = 100,
-        Barcode = 123
-    });
-    _context.Products.Add(new()
-    {
-        Name = "Kalem1",
-        Price = 200,
-        Stock = 100,
-        Barcode = 123
-    });
-    _context.Products.Add(new()
-    {
-        Name = "Kalem1",
-        Price = 200,
-        Stock = 100,
-        Barcode = 123
-    });
+    //_context.Products.Add(new()
+    //{
+    //    Name = "Kalem1",
+    //    Price = 200,
+    //    Stock = 100,
+    //    Barcode = 123
+    //});
+    //_context.Products.Add(new()
+    //{
+    //    Name = "Kalem1",
+    //    Price = 200,
+    //    Stock = 100,
+    //    Barcode = 123
+    //});
+    //_context.Products.Add(new()
+    //{
+    //    Name = "Kalem1",
+    //    Price = 200,
+    //    Stock = 100,
+    //    Barcode = 123
+    //});
    
      _context.SaveChanges();
 

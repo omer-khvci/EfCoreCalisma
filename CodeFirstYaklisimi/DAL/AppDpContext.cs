@@ -11,6 +11,7 @@ namespace CodeFirstYaklisimi.DAL
     public class AppDpContext:DbContext
     {
         public DbSet<Product> Products { get; set; }
+        public DbSet<Category> Categories { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -31,6 +32,14 @@ namespace CodeFirstYaklisimi.DAL
                 }
             });
             return base.SaveChanges();
+        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {// has ile başlayacak her zaman 
+            modelBuilder.Entity<Category>()
+                .HasMany(x => x.Products)
+                .WithOne(x => x.Category)
+                .HasForeignKey(x => x.Category_Id);
+            base.OnModelCreating(modelBuilder);
         }
     }
 }
